@@ -5,7 +5,6 @@ plugins {
 }
 
 addScanProperty("testAllSupportedGradleVersions")
-addScanProperty("testMinimumSupportedGradleVersion")
 addScanProperty("testCurrentGradleVersion", "true")
 addScanProperty("testSpecificGradleVersion")
 

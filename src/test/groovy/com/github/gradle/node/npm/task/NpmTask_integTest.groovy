@@ -18,7 +18,7 @@ class NpmTask_integTest extends AbstractIntegTest {
         copyResources("fixtures/javascript-project/")
 
         when:
-        def result1 = build(":test", "-Pcom.github.gradle.node.experimental=true")
+        def result1 = build(":test")
 
         then:
         result1.task(":nodeSetup").outcome == TaskOutcome.SUCCESS

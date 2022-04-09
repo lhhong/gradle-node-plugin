@@ -3,6 +3,8 @@ package com.github.gradle.node.npm.task
 import com.github.gradle.AbstractIntegTest
 import com.github.gradle.node.NodeExtension
 import org.gradle.testkit.runner.TaskOutcome
+import org.gradle.util.GradleVersion
+import org.junit.Assume
 import org.junit.Rule
 import org.junit.contrib.java.lang.system.EnvironmentVariables
 
@@ -55,6 +57,7 @@ class NpmTask_integTest extends AbstractIntegTest {
 
     def 'execute experimental npm command with a package.json file and check inputs up-to-date detection'() {
         given:
+        Assume.assumeTrue(gradleVersion >= GradleVersion.version("6.2"))
         copyResources("fixtures/npm/")
         copyResources("fixtures/javascript-project/")
 
